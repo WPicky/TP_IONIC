@@ -16,8 +16,8 @@ import { Geolocation } from '@ionic-native/geolocation';
 })
 export class GeolocPage {
 
-latitude: double;
-longitude: double;
+latitude: int;
+longitude: int;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation) {
   }
