@@ -42,6 +42,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SplashScreen,
     Geolocation,
     Camera,
+    Video,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
