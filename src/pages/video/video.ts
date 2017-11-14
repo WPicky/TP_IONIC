@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { VideoCapturePlus, VideoCapturePlusOptions, MediaFile } from '@ionic-native/video-capture-plus';
 
 /**
  * Generated class for the VideoPage page.
@@ -15,11 +16,23 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class VideoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private videoCapturePlus: VideoCapturePlus) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad VideoPage');
-  }
+
+TakeVideo () {
+	const options: VideoCapturePlusOptions = {
+	   limit: 1,
+	   highquality: true,
+	   portraitOverlay: 'assets/img/camera/overlay/portrait.png',
+	   landscapeOverlay: 'assets/img/camera/overlay/landscape.png'
+	}
+
+	this.videoCapturePlus.captureVideo(options).then(mediafile: MediaFile[] => console.log(mediafile), error => console.log('Something went wrong'));
+}
+
+	  ionViewDidLoad() {
+	    console.log('ionViewDidLoad VideoPage');
+	  }
 
 }
