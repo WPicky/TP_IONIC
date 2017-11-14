@@ -20,7 +20,7 @@ export class VideoPage {
   }
 
 
-TakeVideo () {
+/**TakeVideo () {
 	const options: VideoCapturePlusOptions = {
 	   limit: 1,
 	   highquality: true,
@@ -29,7 +29,7 @@ TakeVideo () {
 	}
 
 	this.videoCapturePlus.captureVideo(options).then(mediafile: MediaFile[] => console.log(mediafile), error => console.log('Something went wrong'));
-}
+}*/
 
 	  ionViewDidLoad() {
 	    console.log('ionViewDidLoad VideoPage');
