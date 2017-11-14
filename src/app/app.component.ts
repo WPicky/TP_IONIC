@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { GeolocPage } from '../pages/geoloc/geoloc';
 import { CameraPage } from '../pages/camera/camera';
+import { VideoPage } from '../pages/video/video';
 
 @Component({
   templateUrl: 'app.html'
@@ -26,7 +27,8 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'List', component: ListPage },
       { title: 'Geolocalisation', component: GeolocPage },
-      { title: 'Camera', component: CameraPage }
+      { title: 'Camera', component: CameraPage },
+      { title: 'Video', component: VideoPage }
     ];
 
   }
