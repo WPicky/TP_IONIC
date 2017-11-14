@@ -16,8 +16,8 @@ import { Geolocation } from '@ionic-native/geolocation';
 })
 export class GeolocPage {
 
-latitude: int;
-longitude: int;
+	latitude: number;
+	longitude: number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation) {
   }
@@ -26,6 +26,8 @@ longitude: int;
 	this.geolocation.getCurrentPosition().then((resp) => {
 		console.log(resp.coords.latitude);
 		console.log (resp.coords.longitude);
+		this.latitude= resp.coords.latitude;
+		this.longitude=resp.coords.longitude;
 	}).catch((error) => {
 	  	console.log('Error getting location', error);
 	});
@@ -33,8 +35,8 @@ longitude: int;
 	let watch = this.geolocation.watchPosition();
 	watch.subscribe((data) => {
 	// data can be a set of coordinates, or an error (if an error occurred).
-	this.latitude= data.coords.latitude;
-	this.longitude=data.coords.longitude;
+	// data.coords.latitude;
+	// data.coords.longitude;
 	});
   }
 
