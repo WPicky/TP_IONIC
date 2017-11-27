@@ -12,6 +12,7 @@ import { ListPage } from '../pages/list/list';
 import { GeolocPageModule } from '../pages/geoloc/geoloc.module';
 import { CameraPage } from '../pages/camera/camera';
 import { VideoPage } from '../pages/video/video';
+import { GoogleMapsPage } from '../pages/google-maps/google-maps';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -23,7 +24,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     ListPage,
     CameraPage,
-    VideoPage
+    VideoPage,
+    GoogleMapsPage
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     ListPage,
     CameraPage,
-    VideoPage
+    VideoPage,
+    GoogleMapsPage
   ],
   providers: [
     StatusBar,
