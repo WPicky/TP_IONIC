@@ -86,4 +86,5 @@
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="To locate you" />
     </plugin>
     <plugin name="nl.x-services.plugins.videocaptureplus" spec="~1.0.0" />
+    <plugin name="cordova-plugin-googlemaps" spec="^2.1.1" />
 </widget>
