@@ -9,6 +9,7 @@ import { GeolocPage } from '../pages/geoloc/geoloc';
 import { CameraPage } from '../pages/camera/camera';
 import { VideoPage } from '../pages/video/video';
 import { GoogleMapsPage } from '../pages/google-maps/google-maps';
+import { VibrationPage } from '../pages/vibration/vibration';
 
 @Component({
   templateUrl: 'app.html'
@@ -30,7 +31,8 @@ export class MyApp {
       { title: 'Geolocalisation', component: GeolocPage },
       { title: 'Camera', component: CameraPage },
       { title: 'Video', component: VideoPage },
-      { title: 'Google Maps', component: GoogleMapsPage }
+      { title: 'Google Maps', component: GoogleMapsPage },
+      { title: 'Vibration', component: VibrationPage },
     ];
 
   }

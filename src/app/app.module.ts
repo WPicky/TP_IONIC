@@ -5,6 +5,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 import { Camera } from '@ionic-native/camera';
 import { VideoCapturePlus } from '@ionic-native/video-capture-plus';
 import { GoogleMaps } from '@ionic-native/google-maps';
+import { Vibration } from '@ionic-native/vibration';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -13,6 +14,7 @@ import { GeolocPageModule } from '../pages/geoloc/geoloc.module';
 import { CameraPage } from '../pages/camera/camera';
 import { VideoPage } from '../pages/video/video';
 import { GoogleMapsPage } from '../pages/google-maps/google-maps';
+import { VibrationPage } from '../pages/vibration/vibration';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -25,7 +27,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ListPage,
     CameraPage,
     VideoPage,
-    GoogleMapsPage
+    GoogleMapsPage,
+    VibrationPage
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ListPage,
     CameraPage,
     VideoPage,
-    GoogleMapsPage
+    GoogleMapsPage,
+    VibrationPage,
   ],
   providers: [
     StatusBar,
@@ -48,6 +52,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     Camera,
     VideoCapturePlus,
     GoogleMaps,
+    Vibration,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
