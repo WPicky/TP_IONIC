@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { VideoCapturePlus, VideoCapturePlusOptions, MediaFile } from '@ionic-native/video-capture-plus';
+import { MediaCapture, MediaFile, CaptureError, CaptureImageOptions } from '@ionic-native/media-capture';
 
 /**
  * Generated class for the VideoPage page.
@@ -15,24 +15,29 @@ import { VideoCapturePlus, VideoCapturePlusOptions, MediaFile } from '@ionic-nat
   templateUrl: 'video.html',
 })
 export class VideoPage {
+  fullPath: string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private videoCapturePlus: VideoCapturePlus) {
+
+  constructor(private mediaCapture: MediaCapture) {
   }
 
 
-/**TakeVideo () {
-	const options: VideoCapturePlusOptions = {
-	   limit: 1,
-	   highquality: true,
-	   portraitOverlay: 'assets/img/camera/overlay/portrait.png',
-	   landscapeOverlay: 'assets/img/camera/overlay/landscape.png'
-	}
+  TakeVideo() {
+    const options: CaptureImageOptions = {limit: 3};
+    this.mediaCapture.captureImage(options)
+      .then(
+        (data: MediaFile[]) => {
+          this.fullPath = data[0].fullPath;
+          console.log(data);
+        },
+        (err: CaptureError) => console.error(err)
+      );
 
-	this.videoCapturePlus.captureVideo(options).then(mediafile: MediaFile[] => console.log(mediafile), error => console.log('Something went wrong'));
-}*/
 
-	  ionViewDidLoad() {
-	    console.log('ionViewDidLoad VideoPage');
-	  }
+    ionViewDidLoad()
+    {
+      console.log('ionViewDidLoad VideoPage');
+    }
 
+  }
 }

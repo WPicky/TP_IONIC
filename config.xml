@@ -88,4 +88,5 @@
     <plugin name="nl.x-services.plugins.videocaptureplus" spec="~1.0.0" />
     <plugin name="cordova-plugin-googlemaps" spec="^2.1.1" />
     <plugin name="cordova-plugin-vibration" spec="^2.1.6" />
+    <plugin name="cordova-plugin-media-capture" spec="^2.0.0" />
 </widget>
