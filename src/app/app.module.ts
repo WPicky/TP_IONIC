@@ -7,6 +7,7 @@ import { MediaCapture } from '@ionic-native/media-capture';
 import { VideoPlayer } from '@ionic-native/video-player';
 import { GoogleMaps } from '@ionic-native/google-maps';
 import { Vibration } from '@ionic-native/vibration';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -55,6 +56,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     VideoPlayer,
     GoogleMaps,
     Vibration,
+    SocialSharing,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

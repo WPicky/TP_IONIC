@@ -93,4 +93,5 @@
         <variable name="API_KEY_FOR_IOS" value="AIzaSyA3Jju9u3BUrvUHv2_z_fJxkPdWSXmCNsc" />
     </plugin>
     <plugin name="com.moust.cordova.videoplayer" spec="https://github.com/moust/cordova-plugin-videoplayer.git" />
+    <plugin name="cordova-plugin-x-socialsharing" spec="^5.2.1" />
 </widget>
