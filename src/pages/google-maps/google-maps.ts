@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {GoogleMaps, GoogleMap, GoogleMapsEvent, GoogleMapOptions} from '@ionic-native/google-maps';
 
@@ -18,12 +18,14 @@ export class GoogleMapsPage {
 
   map: GoogleMap;
   constructor(public navCtrl: NavController, public navParams: NavParams, private googleMaps: GoogleMaps) {
+
   }
 
   ionViewDidLoad() {
     this.loadMap();
     console.log('ionViewDidLoad GoogleMapsPage');
   }
+
 
   loadMap() {
 
@@ -38,7 +40,7 @@ export class GoogleMapsPage {
       }
     };
 
-    this.map = this.googleMaps.create('map_canvas', mapOptions);
+      this.map = this.googleMaps.create('map_canvas', mapOptions);
 
     this.map.one(GoogleMapsEvent.MAP_READY)
       .then(() => {
