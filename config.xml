@@ -86,7 +86,11 @@
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="To locate you" />
     </plugin>
     <plugin name="nl.x-services.plugins.videocaptureplus" spec="~1.0.0" />
-    <plugin name="cordova-plugin-googlemaps" spec="^2.1.1" />
     <plugin name="cordova-plugin-vibration" spec="^2.1.6" />
     <plugin name="cordova-plugin-media-capture" spec="^2.0.0" />
+    <plugin name="com.moust.cordova.videoplayer" spec="https://github.com/moust/cordova-plugin-videoplayer.git" />
+    <plugin name="cordova-plugin-googlemaps" spec="^2.1.1">
+        <variable name="API_KEY_FOR_ANDROID" value="AIzaSyA3Jju9u3BUrvUHv2_z_fJxkPdWSXmCNsc" />
+        <variable name="API_KEY_FOR_IOS" value="AIzaSyA3Jju9u3BUrvUHv2_z_fJxkPdWSXmCNsc" />
+    </plugin>
 </widget>

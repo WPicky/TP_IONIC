@@ -4,6 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Camera } from '@ionic-native/camera';
 import { MediaCapture } from '@ionic-native/media-capture';
+import { VideoPlayer } from '@ionic-native/video-player';
 import { GoogleMaps } from '@ionic-native/google-maps';
 import { Vibration } from '@ionic-native/vibration';
 
@@ -51,6 +52,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     Geolocation,
     Camera,
     MediaCapture,
+    VideoPlayer,
     GoogleMaps,
     Vibration,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
