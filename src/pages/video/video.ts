@@ -1,43 +1,36 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { MediaCapture, MediaFile, CaptureError, CaptureImageOptions } from '@ionic-native/media-capture';
+import { MediaCapture, MediaFile, CaptureError, CaptureVideoOptions } from '@ionic-native/media-capture';
+//import { VideoPlayer } from '@ionic-native/video-player';
+import { ToastController } from 'ionic-angular';
 
-/**
- * Generated class for the VideoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
-@IonicPage()
 @Component({
   selector: 'page-video',
-  templateUrl: 'video.html',
+  templateUrl: 'video.html'
 })
+
 export class VideoPage {
   fullPath: string;
 
-
-  constructor(private mediaCapture: MediaCapture) {
+  constructor(private mediaCapture: MediaCapture,
+             // private videoPlayer: VideoPlayer,
+              public toastCtrl: ToastController) {
   }
 
-
-  TakeVideo() {
-    const options: CaptureImageOptions = {limit: 3};
-    this.mediaCapture.captureImage(options)
+  takeVideo() {
+    const options: CaptureVideoOptions = { limit: 3 };
+    this.mediaCapture.captureVideo(options)
       .then(
         (data: MediaFile[]) => {
           this.fullPath = data[0].fullPath;
-          console.log(data);
         },
         (err: CaptureError) => console.error(err)
       );
-
-
-    ionViewDidLoad()
-    {
-      console.log('ionViewDidLoad VideoPage');
-    }
-
   }
-}
+
+ /** playVideo() {
+    this.videoPlayer.play(this.fullPath).then(() => {
+      console.log('video completed');
+    }).catch(err => {
+      console.log(err);
+    });*/
+  }

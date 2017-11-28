@@ -1,14 +1,16 @@
-<ion-menu [content]="content">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Video</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Video</ion-title>
+  </ion-navbar>
+</ion-header>
 
 
 
 <ion-content padding>
 
-	<button ion-button full (click)="TakeVideo()">Video</button>
+	<button ion-button full (click)="takeVideo()">Video</button>
 
 </ion-content>
