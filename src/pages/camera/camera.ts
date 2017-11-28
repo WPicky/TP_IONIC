@@ -67,7 +67,7 @@ export class CameraPage {
 
   shareSMS() {
     // Share via email
-    this.socialSharing.shareViaSMS('Share with MyApp', 'Photo', ['recipient@example.org']).then(() => {
+    this.socialSharing.shareViaSMS('Share with MyApp', '0612345678'.then(() => {
       //Success
       this.presentToast("Message envoyé avec succès !")
     }).catch(() => {
