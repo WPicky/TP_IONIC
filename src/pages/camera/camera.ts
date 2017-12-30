@@ -18,7 +18,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 export class CameraPage {
 
   base64Image : string;
-  number : number;
+  tel : string;
 
   constructor( private camera: Camera, private socialSharing: SocialSharing,public toastCtrl: ToastController) {
   }
@@ -67,8 +67,8 @@ export class CameraPage {
   }
 
   shareSMS() {
-    // Share via email
-    this.socialSharing.shareViaSMS('Share with MyApp', number).then(() => {
+    // Share via sms
+    this.socialSharing.shareViaSMS('Share with MyApp', this.tel).then(() => {
       //Success
       this.presentToast("Envoi en cours ...")
     }).catch(() => {
