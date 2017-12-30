@@ -20,7 +20,7 @@ export class GeolocPage {
 	latitude: number;
 	longitude: number;
 
-  constructor (private geolocation: Geolocation) {
+  constructor (private geolocation: Geolocation, public toastCtrl: ToastController) {
   }
 
   presentToast(message) {

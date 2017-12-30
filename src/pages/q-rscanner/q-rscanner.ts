@@ -19,7 +19,7 @@ export class QRscannerPage {
   private text : string;
   private format : string;
 
-  constructor(private barcodeScanner: BarcodeScanner) {
+  constructor(private barcodeScanner: BarcodeScanner, public toastCtrl: ToastController) {
   }
 
   presentToast(message) {
