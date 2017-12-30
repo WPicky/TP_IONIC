@@ -15,7 +15,13 @@
 
 	<button ion-button color="secondary" (click)="Location()">Me localiser !</button>
 
-	<p> Longitude : {{longitude}} </p> 
+	<p> Longitude : {{longitude}} </p>
 	<p>	Latitude : {{latitude}} </p>
+
+  <ion-item *ngFor="let position of positions">
+    <ion-label>
+      {{position}}
+    </ion-label>
+  </ion-item>
 
 </ion-content>
