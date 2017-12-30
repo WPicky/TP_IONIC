@@ -18,7 +18,6 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 export class CameraPage {
 
   base64Image : string;
-  tel : string;
 
   constructor( private camera: Camera, private socialSharing: SocialSharing,private alertCtrl: AlertController,
                public toastCtrl: ToastController) {
@@ -42,39 +41,40 @@ export class CameraPage {
     alert.present();
   }
 
-  presentPrompt() {
+  presentSMS() {
     let alert = this.alertCtrl.create({
-      title: 'Destinataire',
-      message : 'Envoyer ce message à qui ?',
-      inputs: [
-        {
-          name: 'Numéro de tel',
-          placeholder: 'saisir le numéro'
-        },
-      ],
-      buttons: [
-        {
-          text: 'Cancel',
-          role: 'cancel',
-          handler: data => {
-            console.log('Cancel clicked');
-          }
-        },
-        {
-          text: 'Envoyer',
-          handler: data => {
-            if (data.tel != null) {
-              this.presentAlert();
-            } else {
-              this.presentToast("Une erreur est survenue :(");
-              return false;
-            }
+    title: 'Destinataire',
+    message : 'Envoyer ce message à qui ?',
+    inputs: [
+      {
+        name: 'tel',
+        placeholder: 'saisir le numéro'
+      },
+    ],
+    buttons: [
+      {
+        text: 'Cancel',
+        role: 'cancel',
+        handler: data => {
+          console.log('Cancel clicked');
+        }
+      },
+      {
+        text: 'Envoyer',
+        handler: data => {
+          if (data.tel != null) {
+            shareSMS(data.tel);
+            this.presentAlert();
+          } else {
+            this.presentToast("Une erreur est survenue :(");
+            return false;
           }
         }
-      ]
-    });
-    alert.present();
-  }
+      }
+    ]
+  });
+  alert.present();
+}
 
 
   TakePhoto() {
@@ -111,9 +111,9 @@ export class CameraPage {
     });
   }
 
-  shareSMS() {
+  shareSMS(tel : string) {
     // Share via sms
-    this.socialSharing.shareViaSMS('Share with MyApp', this.tel).then(() => {
+    this.socialSharing.shareViaSMS('Share with MyApp', tel).then(() => {
       //Success
       this.presentToast("Envoi en cours ...")
     }).catch(() => {
