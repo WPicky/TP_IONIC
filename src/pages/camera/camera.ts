@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, ToastController} from 'ionic-angular';
+import { IonicPage, AlertController, ToastController} from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { SocialSharing } from '@ionic-native/social-sharing';
 
@@ -20,7 +20,8 @@ export class CameraPage {
   base64Image : string;
   tel : string;
 
-  constructor( private camera: Camera, private socialSharing: SocialSharing,public toastCtrl: ToastController) {
+  constructor( private camera: Camera, private socialSharing: SocialSharing,private alertCtrl: AlertController,
+               public toastCtrl: ToastController) {
   }
 
   presentToast(message) {
@@ -29,6 +30,50 @@ export class CameraPage {
       duration: 3000
     });
     toast.present();
+  }
+
+
+  presentAlert() {
+    let alert = this.alertCtrl.create({
+      title: 'Message Envoyé',
+      subTitle: 'Votre message a bien été envoyé',
+      buttons: ['Dismiss']
+    });
+    alert.present();
+  }
+
+  presentPrompt() {
+    let alert = this.alertCtrl.create({
+      title: 'Destinataire',
+      message : 'Envoyer ce message à qui ?',
+      inputs: [
+        {
+          name: 'Numéro de tel',
+          placeholder: 'saisir le numéro'
+        },
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Envoyer',
+          handler: data => {
+            if (data.tel != null) {
+              this.presentAlert();
+            } else {
+              this.presentToast("Une erreur est survenue :(");
+              return false;
+            }
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 
 
