@@ -20,10 +20,12 @@ export class HomePage {
   }
 
   Declencheur(){
-    this.presentToast("Ce bouton ne sert à rien ...")
+    this.presentToast("Ce bouton n'est d'aucune utilité ...")
     console.log("c'est ok");
   }
 
-
+  Declencheur2(){
+    this.presentToast("Bien tenté ! Mais il ne se passe rien ici...")
+  }
 
 }
