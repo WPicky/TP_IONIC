@@ -51,6 +51,7 @@ export class GeolocPage {
 
 
   ionViewDidLoad() {
+    this.watch();
     console.log('ionViewDidLoad GeolocPage');
   }
 
