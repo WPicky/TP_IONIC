@@ -8,7 +8,7 @@ import { VideoPlayer } from '@ionic-native/video-player';
 import { GoogleMaps } from '@ionic-native/google-maps';
 import { Vibration } from '@ionic-native/vibration';
 import { SocialSharing } from '@ionic-native/social-sharing';
-import { QRScanner } from '@ionic-native/qr-scanner';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -60,7 +60,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     VideoPlayer,
     GoogleMaps,
     Vibration,
-    QRScanner,
+    BarcodeScanner,
     SocialSharing,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

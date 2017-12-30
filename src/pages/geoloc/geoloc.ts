@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, ToastController} from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 
 /**
@@ -20,7 +20,15 @@ export class GeolocPage {
 	latitude: number;
 	longitude: number;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation) {
+  constructor (private geolocation: Geolocation) {
+  }
+
+  presentToast(message) {
+    let toast = this.toastCtrl.create({
+      message: message,
+      duration: 3000
+    });
+    toast.present();
   }
 
   Location() {
@@ -31,6 +39,7 @@ export class GeolocPage {
       this.longitude = resp.coords.longitude;
     }).catch((error) => {
       console.log('Error getting location', error);
+      this.presentToast("Veuillez activer la localisation");
     });
   }
 

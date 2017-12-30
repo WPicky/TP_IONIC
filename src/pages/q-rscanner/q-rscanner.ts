@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner';
+import { IonicPage, ToastController } from 'ionic-angular';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 /**
  * Generated class for the QRscannerPage page.
@@ -16,40 +16,31 @@ import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner';
 })
 export class QRscannerPage {
 
-  constructor(private qrScanner: QRScanner) {
+  private text : string;
+  private format : string;
+
+  constructor(private barcodeScanner: BarcodeScanner) {
+  }
+
+  presentToast(message) {
+    let toast = this.toastCtrl.create({
+      message: message,
+      duration: 3000
+    });
+    toast.present();
   }
 
   readQR() {
-    // Optionally request the permission early
-    // this.qrScanner.prepare()
-    //   .then((status: QRScannerStatus) => {
-    //     if (status.authorized) {
-    //       // camera permission was granted
-
-
-          // start scanning
-          let scanSub = this.qrScanner.scan().subscribe((text: string) => {
-            console.log('Scanned something', text);
-
-            this.qrScanner.hide(); // hide camera preview
-            scanSub.unsubscribe(); // stop scanning
-          });
-
-          // show camera preview
-          this.qrScanner.show();
-
-          // wait for user to scan something, then the observable callback will be called
-
-       /* } else if (status.denied) {
-          // camera permission was permanently denied
-          // you must use QRScanner.openSettings() method to guide the user to the settings page
-          // then they can grant the permission from there
-        } else {
-          // permission was denied, but not permanently. You can ask for permission again at a later time.
-        }
-      })
-      .catch((e: any) => console.log('Error is', e));*/
+    this.barcodeScanner.scan().then((barcodeData) => {
+      this.text = barcodeData.text;
+      this.format = barcodeData.format;
+      this.presentToast("Scan effectué !");
+    }, (err) => {
+      this.presentToast("Une erreur est survenue :(");
+    });
   }
+
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad QRscannerPage');

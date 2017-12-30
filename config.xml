@@ -94,5 +94,5 @@
     </plugin>
     <plugin name="com.moust.cordova.videoplayer" spec="https://github.com/moust/cordova-plugin-videoplayer.git" />
     <plugin name="cordova-plugin-x-socialsharing" spec="^5.2.1" />
-    <plugin name="cordova-plugin-qrscanner" spec="^2.5.0" />
+    <plugin name="phonegap-plugin-barcodescanner" spec="^7.0.0" />
 </widget>

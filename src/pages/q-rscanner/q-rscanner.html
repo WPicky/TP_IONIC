@@ -13,5 +13,10 @@
 
   <button ion-button block (click)="readQR()">Scanner</button> <br/>
 
+  <div *ngIf="!text">
+    <p> Résultats du Scan : </p>
+    <p> {{text}} </p>
+    <p> Format : {{format}} </p>
+  </div>
 </ion-content>
 
