@@ -49,4 +49,4 @@ playVideo() {
     console.log(err);
   });
 }
-}
+}*/
