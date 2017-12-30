@@ -10,6 +10,7 @@ import { CameraPage } from '../pages/camera/camera';
 import { VideoPage } from '../pages/video/video';
 import { GoogleMapsPage } from '../pages/google-maps/google-maps';
 import { VibrationPage } from '../pages/vibration/vibration';
+import { QRscannerPage } from '../pages/q-rscanner/q-rscanner';
 
 @Component({
   templateUrl: 'app.html'
@@ -33,6 +34,8 @@ export class MyApp {
       { title: 'Video', component: VideoPage },
       { title: 'Google Maps', component: GoogleMapsPage },
       { title: 'Vibration', component: VibrationPage },
+      { title: 'QR Scanner', component: QRscannerPage },
+
     ];
 
   }

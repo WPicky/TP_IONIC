@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Video</ion-title>
+    <ion-title>QR Scanner</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -11,8 +11,7 @@
 
 <ion-content padding>
 
-  <button ion-button full (click)="takeVideo()">Video</button>
-
-  <video [src]="video" *ngIf="video"></video>
+  <button ion-button block (click)="readQR()">Scanner</button> <br/>
 
 </ion-content>
+

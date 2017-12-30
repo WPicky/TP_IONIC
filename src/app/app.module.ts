@@ -8,6 +8,7 @@ import { VideoPlayer } from '@ionic-native/video-player';
 import { GoogleMaps } from '@ionic-native/google-maps';
 import { Vibration } from '@ionic-native/vibration';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { QRScanner } from '@ionic-native/qr-scanner';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -17,6 +18,7 @@ import { CameraPage } from '../pages/camera/camera';
 import { VideoPage } from '../pages/video/video';
 import { GoogleMapsPage } from '../pages/google-maps/google-maps';
 import { VibrationPage } from '../pages/vibration/vibration';
+import { QRscannerPage } from '../pages/q-rscanner/q-rscanner';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -30,7 +32,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CameraPage,
     VideoPage,
     GoogleMapsPage,
-    VibrationPage
+    VibrationPage,
+    QRscannerPage
   ],
   imports: [
     BrowserModule,
@@ -46,6 +49,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     VideoPage,
     GoogleMapsPage,
     VibrationPage,
+    QRscannerPage
   ],
   providers: [
     StatusBar,
@@ -56,6 +60,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     VideoPlayer,
     GoogleMaps,
     Vibration,
+    QRScanner,
     SocialSharing,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

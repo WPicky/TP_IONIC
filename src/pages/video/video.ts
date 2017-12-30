@@ -8,45 +8,29 @@ import { VideoPlayer } from '@ionic-native/video-player';
 })
 
 export class VideoPage {
-  public video: MediaFile[];
+  fullPath: string;
 
-  constructor( private mediaCapture: MediaCapture) {
+  constructor(private mediaCapture: MediaCapture,
+              private videoPlayer: VideoPlayer) {
   }
 
   takeVideo() {
     let options: CaptureVideoOptions = {limit: 1};
     this.mediaCapture.captureVideo(options)
       .then(
-        (data: MediaFile[]) => console.log(data),
+        (data: MediaFile[]) => {
+          this.fullPath = data[0].fullPath;
+          console.log(data);
+        },
         (err: CaptureError) => console.error(err)
       );
   }
-}
 
-/*
-fullPath: string;
-
-constructor(private mediaCapture: MediaCapture,
-            private videoPlayer: VideoPlayer) {
+  playVideo() {
+    this.videoPlayer.play(this.fullPath).then(() => {
+      console.log('video completed');
+    }).catch(err => {
+      console.log(err);
+    });
+  }
 }
-
-takeVideo() {
-  let options: CaptureVideoOptions = {limit: 1};
-  this.mediaCapture.captureVideo(options)
-    .then(
-      (data: MediaFile[]) => {
-        this.fullPath = data[0].fullPath;
-        console.log(data);
-      },
-      (err: CaptureError) => console.error(err)
-    );
-}
-
-playVideo() {
-  this.videoPlayer.play(this.fullPath).then(() => {
-    console.log('video completed');
-  }).catch(err => {
-    console.log(err);
-  });
-}
-}*/
