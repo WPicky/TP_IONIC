@@ -44,8 +44,7 @@ export class GeolocPage {
   }
 
   watch() {
-    let watch = this.geolocation.watchPosition();
-    watch.subscribe((data) => {
+    this.geolocation.watchPosition().subscribe((data) => {
       this.positions.push(data.coords.latitude + " " + data.coords.longitude);
     });
   }
