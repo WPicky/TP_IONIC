@@ -63,7 +63,7 @@ export class CameraPage {
         text: 'Envoyer',
         handler: data => {
           if (data.tel != null) {
-            shareSMS(data.tel);
+            this.shareSMS(data.tel);
             this.presentAlert();
           } else {
             this.presentToast("Une erreur est survenue :(");
